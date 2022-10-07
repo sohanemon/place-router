@@ -1,4 +1,4 @@
-import Hero from "./hero";
+import { Outlet } from "react-router-dom";
 import Navbar from "./navbar";
 
 const Main = () => {
@@ -6,7 +6,8 @@ const Main = () => {
     <>
       <Navbar />
       <br />
-      <Hero />
+      <Outlet />
+      {/* <Footer /> */}
     </>
   );
 };

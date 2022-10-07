@@ -5,10 +5,13 @@ const Navbar = () => {
     <>
       <nav
         id='header'
-        className='w-full z-30 top-10 py-1 bg-white shadow-lg border-b border-emerald-400'
+        className='w-full z-30 py-1 sticky top-0 bg-white shadow-lg border-b border-emerald-400'
       >
         <div className='w-full flex items-center justify-between mt-0 px-6 py-2'>
-          <label for='menu-toggle' className='cursor-pointer md:hidden block'>
+          <label
+            htmlFor='menu-toggle'
+            className='cursor-pointer md:hidden block'
+          >
             <svg
               className='fill-current text-emerald-600'
               xmlns='http://www.w3.org/2000/svg'
@@ -28,30 +31,16 @@ const Navbar = () => {
           >
             <nav>
               <ul className='md:flex items-center justify-between text-emerald-600 pt-4 md:pt-0'>
-                <li>
-                  <Link
-                    to='/'
-                    className='inline-block no-underline hover:text-emerald-800 font-medium py-2 px-4 lg:-ml-2'
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to='/'
-                    className='inline-block no-underline hover:text-emerald-800 font-medium py-2 px-4 lg:-ml-2'
-                  >
-                    Products
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to='/'
-                    className='inline-block no-underline hover:text-emerald-800 font-medium py-2 px-4 lg:-ml-2'
-                  >
-                    About
-                  </Link>
-                </li>
+                {navs.map((e) => (
+                  <li key={e}>
+                    <Link
+                      to={`/${e === "home" ? "" : e}`}
+                      className='inline-block no-underline hover:text-emerald-800 font-medium py-2 px-4 lg:-ml-2 capitalize'
+                    >
+                      {e}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>
@@ -76,3 +65,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+const navs = ["home", "photos", "timeline", "users", "about"];
