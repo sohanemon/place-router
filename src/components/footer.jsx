@@ -11,15 +11,17 @@ const Footer = () => {
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 fill='none'
-                stroke='currentColor'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='2'
-                className='w-10 h-10 text-white p-2 bg-indigo-500 rounded-full'
                 viewBox='0 0 24 24'
+                stroke-width='1.5'
+                stroke='currentColor'
+                class='w-6 h-6'
               >
-                <path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'></path>
+                <path
+                  stroke-linecap='round'
+                  d='M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25'
+                />
               </svg>
+
               <span className='ml-3 text-xl'>Place-Router</span>
             </a>
             <p className='mt-2 text-sm text-gray-500'>

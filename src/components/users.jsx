@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
 const Users = () => {
   const data = useLoaderData();
+  const [isShowAll, setIsShowAll] = useState(false);
   return (
     <>
       <div className='p-4 mx-auto w-full max-w-xl bg-white rounded-lg  border shadow-md sm:p-8 dark:bg-emerald-800 dark:border-emerald-700'>
@@ -9,16 +11,18 @@ const Users = () => {
           <h5 className='text-xl font-bold leading-none text-emerald-900 dark:text-white'>
             Recent users
           </h5>
-          <a
-            href='/'
-            className='text-sm font-medium text-blue-600 hover:underline dark:text-blue-500'
-          >
-            View all
-          </a>
+          {!isShowAll ? (
+            <button
+              onClick={() => setIsShowAll(true)}
+              className='text-sm font-medium text-blue-600 hover:underline dark:text-blue-500'
+            >
+              Show all
+            </button>
+          ) : null}
         </div>
         <div className='flow-root'>
           <ul className='divide-y divide-emerald-200 dark:divide-emerald-700'>
-            {data.map((e) => (
+            {data.slice(0, 5).map((e) => (
               <User
                 key={e.id}
                 name={e.name}
@@ -27,6 +31,18 @@ const Users = () => {
                 id={e.id}
               />
             ))}
+            {isShowAll &&
+              data
+                .slice(5)
+                .map((e) => (
+                  <User
+                    key={e.id}
+                    name={e.name}
+                    email={e.email}
+                    username={e.username}
+                    id={e.id}
+                  />
+                ))}
           </ul>
         </div>
       </div>

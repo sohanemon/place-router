@@ -18,7 +18,7 @@ const Profile = () => {
       .then((data) => setTodos(data));
 
     return () => {};
-  }, []);
+  }, [user.id]);
   console.log(album);
   return (
     <>
@@ -58,9 +58,9 @@ const Profile = () => {
             <div className='bg-white p-3 hover:shadow'></div>
           </div>
           <div className='w-full md:w-9/12 mx-2 h-64'>
-            <div className='bg-white p-3 shadow-sm rounded-sm'>
-              <div className='flex items-center space-x-2 font-semibold text-gray-900 leading-8'>
-                <span clas='text-emerald-500'>
+            <div className='bg-white p-3 shadow-sm rounded-sm text-emerald-500'>
+              <div className='flex items-center space-x-2 font-semibold leading-8'>
+                <span>
                   <svg
                     className='h-5'
                     xmlns='http://www.w3.org/2000/svg'
@@ -76,7 +76,7 @@ const Profile = () => {
                     />
                   </svg>
                 </span>
-                <span className='tracking-wide'>About</span>
+                <span className='tracking-wide '>About</span>
               </div>
               <div className='text-gray-700'>
                 <div className='grid md:grid-cols-2 text-sm'>
@@ -153,8 +153,8 @@ const Profile = () => {
             <div className='bg-white p-3 shadow-sm rounded-sm'>
               <div className='grid grid-cols-2 gap-4'>
                 <div>
-                  <div className='flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3'>
-                    <span clas='text-emerald-500'>
+                  <div className='flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3 text-emerald-500'>
+                    <span>
                       <svg
                         className='h-5'
                         xmlns='http://www.w3.org/2000/svg'
@@ -183,25 +183,20 @@ const Profile = () => {
                   <ShowAllBtn getter={showAllTodos} setter={setShowAllTodos} />
                 </div>
                 <div>
-                  <div className='flex items-center space-x-2 font-semibold text-gray-900 leading-8 mb-3'>
-                    <span clas='text-emerald-500'>
+                  <div className='flex items-center text-emerald-500 space-x-2 font-semibold leading-8 mb-3'>
+                    <span>
                       <svg
-                        className='h-5'
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
                         viewBox='0 0 24 24'
+                        stroke-width='1.5'
                         stroke='currentColor'
+                        className='w-6 h-6'
                       >
-                        <path fill='#fff' d='M12 14l9-5-9-5-9 5 9 5z' />
-                        <path
-                          fill='#fff'
-                          d='M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z'
-                        />
                         <path
                           stroke-linecap='round'
                           stroke-linejoin='round'
-                          stroke-width='2'
-                          d='M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222'
+                          d='M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z'
                         />
                       </svg>
                     </span>
