@@ -66,4 +66,4 @@ const Navbar = () => {
 
 export default Navbar;
 
-const navs = ["home", "photos", "timeline", "users", "about"];
+const navs = ["home", "users", "gallery", "timeline", "about"];

@@ -19,14 +19,14 @@ const Hero = () => {
 
           <div className='mt-6 flex items-center justify-center gap-4'>
             <Link
-              href='#'
-              className='transform rounded-md bg-emerald-600/95 px-5 py-3 font-medium text-white transition-colors hover:bg-emerald-700'
+              to={"photos"}
+              className='transform rounded-md bg-emerald-600/95 px-5 py-3 active:scale-95 transition-all font-medium text-white  hover:bg-emerald-700'
             >
               Go to Album{" "}
             </Link>
             <Link
-              href='#'
-              className='transform rounded-md border border-slate-200 px-5 py-3 font-medium text-slate-900 transition-colors hover:bg-slate-50'
+              to={"timeline"}
+              className='transform rounded-md border border-slate-200 px-5 py-3 active:scale-95 transition-all font-medium text-slate-900  hover:bg-slate-50'
             >
               {" "}
               Timeline{" "}
